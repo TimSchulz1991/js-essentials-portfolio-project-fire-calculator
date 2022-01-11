@@ -1,0 +1,21 @@
+/* General setup */
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+h1,
+h3,
+h4 {
+    font-family: 'Arvo', serif;
+}
