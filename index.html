@@ -14,10 +14,11 @@
 <body>
     <header>
         <h1>F.I.R.E. Calculator</h1>
-        <h3><span>F</span>inencial <span>I</span>ndependence <span>R</span>etire <span>E</span>arly</h3>
+        <h3><span class="large">F</span>inencial <span class="large">I</span>ndependence <span class="large">R</span>etire <span class="large">E</span>arly</h3>
     </header>
     <div id="main-area">
         <section id="input-area">
+            <h3 id="retirement-age">With this calculator you can see your future retirement age, based on the values you enter below.</h3>
             <form action="">
                 <div class="form-item">
                     <label for="income-el">My annual income (in €): </label>
@@ -39,10 +40,12 @@
                     <label for="age-el">My current age: </label>
                     <input type="number" id="age-el" min="0" max="100">
                 </div>
+                <button>Calculate time until retirement</button>
             </form>
         </section>
+        <hr>
         <section id="output-area">
-
+            
         </section>
     </div>
 
