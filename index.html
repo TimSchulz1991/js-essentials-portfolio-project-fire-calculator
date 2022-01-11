@@ -24,7 +24,23 @@
         <div id="input-area"> 
             <h4 id="retirement-age">With this calculator you can see your future retirement age, based on the values you enter below.</h4>
             <form action="">
-                <div class="form-item">
+                <div class="input-container">
+                    <div class="container-left">
+                        <label for="income-el">My annual income (in €): </label>
+                        <label for="cost-el">My annual costs (in €): </label>
+                        <label for="net-worth-el">My starting investment (in €): </label>
+                        <label for="interest-el">Annual anticipated return (in %): </label>
+                        <label for="age-el">My current age: </label>
+                    </div>
+                    <div class="container-right">
+                        <input type="number" id="income-el" min="0">
+                        <input type="number" id="cost-el" min="0">
+                        <input type="number" id="net-worth-el" min="0">
+                        <input type="number" id="interest-el" min="0">
+                        <input type="number" id="age-el" min="0" max="100">
+                     </div>
+                </div>
+                <!-- <div class="form-item">
                     <label for="income-el">My annual income (in €): </label>
                     <input type="number" id="income-el" min="0">
                 </div>
@@ -43,7 +59,7 @@
                 <div class="form-item">
                     <label for="age-el">My current age: </label>
                     <input type="number" id="age-el" min="0" max="100">
-                </div>
+                </div> -->
                 <button id="calculate">Calculate time until retirement</button>
             </form>
         </div>
