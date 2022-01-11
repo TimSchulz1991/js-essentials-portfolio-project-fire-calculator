@@ -12,10 +12,45 @@
 body {
     font-family: 'Lato', sans-serif;
     text-align: center;
+    background: white;
 }
 
 h1,
 h3,
 h4 {
     font-family: 'Arvo', serif;
+}
+
+/* Header */
+
+header {
+    background: #5B2029;
+    color: #EEEAED;
+    padding: 30px 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h3 span {
+    font-size: 1.5rem;
+}
+
+/* Main area */
+
+#main-area {
+    width: 60%;
+    -webkit-box-shadow: 5px 5px 20px 2px #7D7B7D; 
+    box-shadow: 5px 5px 20px 2px #7D7B7D;
+    margin: 30px auto;
+    background: #EEEAED;
+    border-radius: 10px;
+}
+
+#retirement-age {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+    font-size: 1.5rem;
 }
