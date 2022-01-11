@@ -12,13 +12,17 @@
     <title>FIRE Calculator</title>
 </head>
 <body>
+    <!-- Header including title and subtitle -->
     <header>
         <h1>F.I.R.E. Calculator</h1>
         <h3><span class="large">F</span>inencial <span class="large">I</span>ndependence <span class="large">R</span>etire <span class="large">E</span>arly</h3>
     </header>
+
+    <!-- Main area to collect user input and give the user the calculated output -->
     <section id="main-area">
-        <div id="input-area">
-            <h3 id="retirement-age">With this calculator you can see your future retirement age, based on the values you enter below.</h3>
+        <!-- Collect user input -->
+        <div id="input-area"> 
+            <h4 id="retirement-age">With this calculator you can see your future retirement age, based on the values you enter below.</h4>
             <form action="">
                 <div class="form-item">
                     <label for="income-el">My annual income (in €): </label>
@@ -40,25 +44,30 @@
                     <label for="age-el">My current age: </label>
                     <input type="number" id="age-el" min="0" max="100">
                 </div>
-                <button>Calculate time until retirement</button>
+                <button id="calculate">Calculate time until retirement</button>
             </form>
         </div>
         <hr>
+        <!-- Show output of calculation to the user -->
         <div id="output-area">
             <p>Total Portfolio Value: <span id="portfolio-val"></span></p>
             <p>of which is savings: <span id="savings-val"></span></p>
             <p>of which is return on investment: <span id="roi-val"></span></p>
         </div>
     </section>
-    <section id="faq-area">
 
+    <!-- Answer the users questions about FIRE and the calculation -->
+    <section id="faq-area">
+        <h3>FAQ</h3>
     </section>
+
+    <!-- Footer area with contact links -->
     <footer>
         <p>Let's chat about FIRE!</p>
         <div class="social-links">
             <a href="https://www.facebook.com/preglife.connect" target="_blank" rel="noopener" aria-label="visit my facebook page (open in a new tab)"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/preglife.connect/" target="_blank" rel="noopener" aria-label="visit my instagram page (open in a new tab)"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.instagram.com/preglife.connect/" target="_blank" rel="noopener" aria-label="visit my instagram page (open in a new tab)"><i class="fas fa-envelope"></i></a>
+            <a href="" target="_blank" rel="noopener" aria-label="Send me an email"><i class="fas fa-envelope"></i></a>
         </div>
         <p>Copyright Tim Schulz 2022</p>
     </footer>   
