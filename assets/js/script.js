@@ -2,13 +2,44 @@
  * Declare constants for DOM manupulation and to grab input values
  */
 
-const retirementAge = document.getElementById("retirement-age");
-const income = document.getElementById("income-el");
-const cost = document.getElementById("cost-el");
-const netWorth = document.getElementById("net-worth-el");
-const interest = document.getElementById("interest-el");
-const age = document.getElementById("age-el");
-const button = document.getElementById("calculate");
-const portfolioValue = document.getElementById("portfolio-val");
-const savingsValue = document.getElementById("savings-val");
-const roiValue = document.getElementById("roi-val")
+const retirementAgeEL = document.getElementById("retirement-age");
+const incomeEL = document.getElementById("income-el");
+const costEL = document.getElementById("cost-el");
+const netWorthEl = document.getElementById("net-worth-el");
+const interestEl = document.getElementById("interest-el");
+const ageEl = document.getElementById("age-el");
+const buttonEl = document.getElementById("calculate");
+const portfolioValueEl = document.getElementById("portfolio-val");
+const savingsValueEl = document.getElementById("savings-val");
+const roiValueEl = document.getElementById("roi-val");
+
+/**
+ * Add event listeners
+ */
+
+button.addEventListener('click',function(){
+    calculateRetirementAge();
+})
+
+/**
+ * Calculate the retirement age with all the input values
+ */
+
+const calculateRetirementAge = () => {
+    validateInput();
+
+    const income = parseInt(incomeEL.value);
+    const cost = parseInt(costEL.value);
+    const netWorth = parseInt(netWorthEl.value);
+    const interest = parseInt(interestEl.value) / 100;
+    const age = parseInt(ageEl.value);
+
+    const netWorthNeeded = cost*25;
+    const annualSavings = income-cost;
+    let currentWorth = netWorth;
+    let yearCounter = 0;
+}
+
+const validateInput = () => {
+
+}
