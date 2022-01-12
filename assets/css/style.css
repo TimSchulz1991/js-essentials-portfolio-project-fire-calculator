@@ -37,6 +37,20 @@ h3 span {
     font-size: 1.5rem;
 }
 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    h3 span {
+        font-size: 1.2rem;
+    }
+}
+
 /* Main area */
 
 #container-section {
@@ -60,6 +74,12 @@ h3 span {
     margin: 0 auto;
     padding: 30px 0;
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    #main-area {
+        width: 90%;
+    }
 }
 
 /* --> Input area */
@@ -109,6 +129,7 @@ button {
     background: #F05454;
     color: #F5F5F5;
     font-weight: 700;
+    font-size: 1.1rem;
     padding: 15px;
     border-radius: 25px;
     margin: 30px 0;
@@ -130,6 +151,28 @@ hr {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+    .input-container {
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-row-gap: 15px;
+    }
+
+    .input-container label {
+        text-align: center;
+    }
+
+    .input-container input {
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    hr {
+        width: 300px;
+    }
+}
+
 /* --> Output area */
 
 #output-area p {
@@ -138,7 +181,7 @@ hr {
 
 .large-p {
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-top: 20px;
 }
 
