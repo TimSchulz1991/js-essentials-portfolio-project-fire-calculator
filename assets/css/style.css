@@ -78,6 +78,25 @@ h3 span {
     box-shadow: 5px 5px 10px 0px #7D7B7D;
 }
 
+.input-container input:focus {
+    outline: none;
+    border: 1px solid #30475E;
+    box-shadow: 0 0 5px #30475E;
+    background: white; /* With the help of https://stackoverflow.com/questions/16156594/how-to-change-border-color-of-textarea-on-focus */
+}
+
+/* With the help of https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
+.input-container input::-webkit-outer-spin-button,
+.input-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+/* With the help of https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
+.input-container input[type=number] {
+    -moz-appearance: textfield;
+}
+
 button {
     background: #F05454;
     color: #F5F5F5;
@@ -85,4 +104,14 @@ button {
     padding: 15px;
     border-radius: 25px;
     margin: 30px 0;
+    -webkit-box-shadow: 5px 5px 10px 0px #7D7B7D; 
+    box-shadow: 5px 5px 10px 0px #7D7B7D;
+}
+
+
+button:hover {
+    background: #30475E;
+    transform:scale(1.03,1.03); /* With the help of https://stackoverflow.com/questions/20504346/increasing-the-width-of-button-by-a-few-percent-on-hover */
+    -webkit-transform:scale(1.03,1.03);
+    -moz-transform:scale(1.03,1.03);
 }
