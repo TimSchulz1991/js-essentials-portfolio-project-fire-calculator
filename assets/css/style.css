@@ -46,6 +46,7 @@ h3 span {
     margin: 30px auto;
     background: #F5F5F5;
     border-radius: 10px;
+    padding-bottom: 30px;
 }
 
 #retirement-age {
@@ -69,12 +70,13 @@ h3 span {
     text-align: right;
 }
 
+
 .input-container input {
     background: #F5F5F5;
     border: 1px solid #7D7B7D;
     padding: 5px 10px;
     border-radius: 15px;
-    -webkit-box-shadow: 5px 5px 10px 0px #7D7B7D; 
+    -webkit-box-shadow: 5px 5px 10px 0px #7D7B7D; /* With the help of - https://html-css-js.com/css/generator/box-shadow/ */
     box-shadow: 5px 5px 10px 0px #7D7B7D;
 }
 
@@ -114,4 +116,22 @@ button:hover {
     transform:scale(1.03,1.03); /* With the help of https://stackoverflow.com/questions/20504346/increasing-the-width-of-button-by-a-few-percent-on-hover */
     -webkit-transform:scale(1.03,1.03);
     -moz-transform:scale(1.03,1.03);
+}
+
+hr {
+    border-top: 3px solid #30475E;
+    width: 400px;
+    margin: 0 auto;
+}
+
+/* --> Output area */
+
+#output-area p {
+    padding-bottom: 30px;
+}
+
+.large-p {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 20px;
 }
