@@ -24,7 +24,7 @@ h4 {
 /* Header */
 
 header {
-    background: #5B2029;
+    background: #30475E;
     color: #EEEAED;
     padding: 30px 0;
 }
@@ -40,16 +40,16 @@ h3 span {
 /* Main area */
 
 #main-area {
-    width: 60%;
+    width: 700px;
     -webkit-box-shadow: 5px 5px 20px 2px #7D7B7D; 
     box-shadow: 5px 5px 20px 2px #7D7B7D;
     margin: 30px auto;
-    background: #EEEAED;
+    background: #F5F5F5;
     border-radius: 10px;
 }
 
 #retirement-age {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     padding: 30px 0;
     font-size: 1.5rem;
@@ -57,29 +57,32 @@ h3 span {
 
 /* --> Input area */
 
-/* .form-item {
-    padding: 10px 0;
-}
-
-.form-item label {
-    text-align: right;
-} */
 .input-container {
-    display: flex;
-    padding-bottom: 20px;
+    display:grid;
+    grid-template-columns: 7fr 3fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 15px;
+    margin-right: 20%;
 }
 
-.container-left,
-.container-right {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+.input-container label {
+    text-align: right;
 }
 
 .input-container input {
-    background: #EEEAED;
-    padding: 5px 0;
+    background: #F5F5F5;
     border: 1px solid #7D7B7D;
+    padding: 5px 10px;
     border-radius: 15px;
-    margin: 5px 50px 5px 50px;
+    -webkit-box-shadow: 5px 5px 10px 0px #7D7B7D; 
+    box-shadow: 5px 5px 10px 0px #7D7B7D;
+}
+
+button {
+    background: #F05454;
+    color: #F5F5F5;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 25px;
+    margin: 30px 0;
 }
