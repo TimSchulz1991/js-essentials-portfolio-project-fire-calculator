@@ -17,7 +17,7 @@ const roiValueEl = document.getElementById("roi-val");
  * Add event listeners
  */
 
-button.addEventListener('click',function(){
+buttonEl.addEventListener('click',() => {
     calculateRetirementAge();
 })
 
@@ -27,7 +27,7 @@ button.addEventListener('click',function(){
 
 const calculateRetirementAge = () => {
     validateInput();
-
+    console.log("SHIT");
     const income = parseInt(incomeEL.value);
     const cost = parseInt(costEL.value);
     const netWorth = parseInt(netWorthEl.value);
@@ -38,6 +38,20 @@ const calculateRetirementAge = () => {
     const annualSavings = income-cost;
     let currentWorth = netWorth;
     let yearCounter = 0;
+
+    while (currentWorth < netWorthNeeded) {
+        if (yearCounter === 0) {
+            currentWorth *= (1 + interest);
+            yearCounter++
+        } else {
+            currentWorth = (currentWorth + annualSavings) * (1 + interest);
+            yearCounter++;
+        }
+        console.log(yearCounter);
+        console.log(currentWorth);
+    }
+
+    const retirementAge = age + yearCounter;
 }
 
 const validateInput = () => {
