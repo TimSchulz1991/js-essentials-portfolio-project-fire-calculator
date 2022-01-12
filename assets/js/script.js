@@ -2,24 +2,25 @@
  * Declare constants for DOM manupulation and to grab input values
  */
 
-const retirementAgeEL = document.getElementById("retirement-age");
-const incomeEL = document.getElementById("income-el");
-const costEL = document.getElementById("cost-el");
-const netWorthEl = document.getElementById("net-worth-el");
-const interestEl = document.getElementById("interest-el");
-const ageEl = document.getElementById("age-el");
-const buttonEl = document.getElementById("calculate");
-const portfolioValueEl = document.getElementById("portfolio-val");
-const savingsValueEl = document.getElementById("savings-val");
-const roiValueEl = document.getElementById("roi-val");
+    const retirementAgeEl = document.getElementById("retirement-age");
+    const incomeEl = document.getElementById("income-el");
+    const costEl = document.getElementById("cost-el");
+    const netWorthEl = document.getElementById("net-worth-el");
+    const interestEl = document.getElementById("interest-el");
+    const ageEl = document.getElementById("age-el");
+    const buttonEl = document.getElementById("calculate");
+    const portfolioValueEl = document.getElementById("portfolio-val");
+    const savingsValueEl = document.getElementById("savings-val");
+    const roiValueEl = document.getElementById("roi-val");
 
 /**
  * Add event listeners
  */
 
-buttonEl.addEventListener('click',() => {
-    calculateRetirementAge();
-})
+    buttonEl.addEventListener('click',() => {
+        console.log("hello");
+        calculateRetirementAge();
+    })
 
 /**
  * Calculate the retirement age with all the input values
@@ -27,9 +28,9 @@ buttonEl.addEventListener('click',() => {
 
 const calculateRetirementAge = () => {
     validateInput();
-    console.log("SHIT");
-    const income = parseInt(incomeEL.value);
-    const cost = parseInt(costEL.value);
+    
+    const income = parseInt(incomeEl.value);
+    const cost = parseInt(costEl.value);
     const netWorth = parseInt(netWorthEl.value);
     const interest = parseInt(interestEl.value) / 100;
     const age = parseInt(ageEl.value);
@@ -47,9 +48,10 @@ const calculateRetirementAge = () => {
             currentWorth = (currentWorth + annualSavings) * (1 + interest);
             yearCounter++;
         }
-        console.log(yearCounter);
-        console.log(currentWorth);
     }
+
+    console.log(yearCounter);
+    console.log(currentWorth);
 
     const retirementAge = age + yearCounter;
 }
