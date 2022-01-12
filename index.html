@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,44 +12,50 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>FIRE Calculator</title>
 </head>
+
 <body>
     <!-- Header including title and subtitle -->
     <header>
         <h1>F.I.R.E. Calculator</h1>
-        <h3><span class="large">F</span>inencial <span class="large">I</span>ndependence <span class="large">R</span>etire <span class="large">E</span>arly</h3>
+        <h3><span class="large">F</span>inencial <span class="large">I</span>ndependence <span
+                class="large">R</span>etire <span class="large">E</span>arly</h3>
     </header>
 
     <!-- Main area to collect user input and give the user the calculated output -->
-    <section id="main-area">
+    <section id="container-section">
         <!-- Collect user input -->
-        <div id="input-area"> 
-            <h4 id="retirement-age">With this calculator you can see your future retirement age, based on the values you enter below</h4>
-            <form action="">
-                <div class="input-container">
-                    <label for="income-el">My annual income (in €): </label>
-                    <input type="number" id="income-el" min="0">
-                    
-                    <label for="cost-el">My annual costs (in €): </label>
-                    <input type="number" id="cost-el" min="0">
-                    
-                    <label for="net-worth-el">My starting investment (in €): </label>
-                    <input type="number" id="net-worth-el" min="0">
-                    
-                    <label for="interest-el">Annual anticipated return (in %): </label>
-                    <input type="number" id="interest-el" min="0">
-                   
-                    <label for="age-el">My current age: </label>
-                    <input type="number" id="age-el" min="0" max="100">
-                </div>
-                <button id="calculate">Calculate time until retirement</button>
-            </form>
-        </div>
-        <hr>
-        <!-- Show output of calculation to the user -->
-        <div id="output-area">
-            <p class="large-p">Total Portfolio Value: <br><span id="portfolio-val"></span></p>
-            <p>of which is savings: <br><span id="savings-val"></span></p>
-            <p>of which is return on investment: <br><span id="roi-val"></span></p>
+        <div id="main-area">
+            <div id="input-area">
+                <h4 id="retirement-age">With this calculator you can see your future retirement age, based on the values
+                    you
+                    enter below</h4>
+                <form action="">
+                    <div class="input-container">
+                        <label for="income-el">My annual income (in €): </label>
+                        <input type="number" id="income-el" min="0">
+
+                        <label for="cost-el">My annual costs (in €): </label>
+                        <input type="number" id="cost-el" min="0">
+
+                        <label for="net-worth-el">My starting investment (in €): </label>
+                        <input type="number" id="net-worth-el" min="0">
+
+                        <label for="interest-el">Annual anticipated return (in %): </label>
+                        <input type="number" id="interest-el" min="0">
+
+                        <label for="age-el">My current age: </label>
+                        <input type="number" id="age-el" min="0" max="100">
+                    </div>
+                    <button id="calculate">Calculate time until retirement</button>
+                </form>
+            </div>
+            <hr>
+            <!-- Show output of calculation to the user -->
+            <div id="output-area">
+                <p class="large-p">Total Portfolio Value: <br><span id="portfolio-val"></span></p>
+                <p>of which is savings: <br><span id="savings-val"></span></p>
+                <p>of which is return on investment: <br><span id="roi-val"></span></p>
+            </div>
         </div>
     </section>
 
@@ -59,18 +66,21 @@
 
     <!-- Footer area with contact links -->
     <footer>
-        <p>Let's chat about FIRE!</p>
+        <p class="footer-top">Let's chat about F.I.R.E.!</p>
         <div class="social-links">
-            <a href="https://www.facebook.com/preglife.connect" target="_blank" rel="noopener" aria-label="visit my facebook page (open in a new tab)"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/preglife.connect/" target="_blank" rel="noopener" aria-label="visit my instagram page (open in a new tab)"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/preglife.connect" target="_blank" rel="noopener"
+                aria-label="visit my facebook page (open in a new tab)"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/preglife.connect/" target="_blank" rel="noopener"
+                aria-label="visit my instagram page (open in a new tab)"><i class="fab fa-instagram"></i></a>
             <a href="" target="_blank" rel="noopener" aria-label="Send me an email"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>Copyright Tim Schulz 2022</p>
-    </footer>   
+        <p class="footer-bottom">Copyright Tim Schulz 2022</p>
+    </footer>
     <script src="/assets/js/script.js"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/34953ef7dd.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>

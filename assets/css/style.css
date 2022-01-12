@@ -39,11 +39,17 @@ h3 span {
 
 /* Main area */
 
+#container-section {
+    padding: 50px 0;
+    background: url(../images/bg1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
 #main-area {
     width: 700px;
     -webkit-box-shadow: 5px 5px 20px 2px #7D7B7D; 
     box-shadow: 5px 5px 20px 2px #7D7B7D;
-    margin: 30px auto;
+    margin: 0 auto;
     background: #F5F5F5;
     border-radius: 10px;
     padding-bottom: 30px;
@@ -76,8 +82,8 @@ h3 span {
     border: 1px solid #7D7B7D;
     padding: 5px 10px;
     border-radius: 15px;
-    -webkit-box-shadow: 5px 5px 10px 0px #7D7B7D; /* With the help of - https://html-css-js.com/css/generator/box-shadow/ */
-    box-shadow: 5px 5px 10px 0px #7D7B7D;
+    -webkit-box-shadow: 1px 1px 5px 1px #7D7B7D; /* With the help of - https://html-css-js.com/css/generator/box-shadow/ */
+    box-shadow: 1px 1px 5px 1px #7D7B7D;
 }
 
 .input-container input:focus {
@@ -106,8 +112,8 @@ button {
     padding: 15px;
     border-radius: 25px;
     margin: 30px 0;
-    -webkit-box-shadow: 5px 5px 10px 0px #7D7B7D; 
-    box-shadow: 5px 5px 10px 0px #7D7B7D;
+    -webkit-box-shadow: 1px 1px 5px 1px #7D7B7D; 
+    box-shadow: 1px 1px 5px 1px #7D7B7D;
 }
 
 
@@ -134,4 +140,33 @@ hr {
     font-weight: bold;
     font-size: 1.3rem;
     margin-top: 20px;
+}
+
+/* Footer area */
+
+footer {
+    background: #30475E;
+    color: #EEEAED;
+}
+
+.footer-top {
+    font-size: 1.15rem;
+    padding: 30px 0 15px;
+}
+
+.social-links i {
+    color: #F05454;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+.social-links i:hover {
+    transform:scale(1.2,1.2); /* With the help of https://stackoverflow.com/questions/20504346/increasing-the-width-of-button-by-a-few-percent-on-hover */
+    -webkit-transform:scale(1.2,1.2);
+    -moz-transform:scale(1.2,1.2);
+}
+
+.footer-bottom {
+    font-size: 0.8rem;
+    padding: 15px 0;
 }
