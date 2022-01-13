@@ -33,7 +33,7 @@ const calculateOutputValues = () => {
     const interest = parseInt(interestEl.value) / 100;
     const age = parseInt(ageEl.value);
 
-    const errors = validateInput(income, cost, netWorth, interest, age);
+    const errors = validateInput(income, cost, interest, age);
     if (errors === null) {
         const netWorthNeeded = cost * 25;
         const annualSavings = income - cost;
@@ -51,7 +51,7 @@ const calculateOutputValues = () => {
         }
 
         const retirementAge = age + yearCounter;
-        const savingsValue = yearCounter * annualSavings;
+        const savingsValue = yearCounter * annualSavings + netWorth;
         const roiValue = currentWorth - savingsValue;
 
         return {
@@ -107,7 +107,7 @@ const renderOutput = () => {
  * This function validates all the input values
  */
 
-const validateInput = (income, cost, netWorth, interest, age) => {
+const validateInput = (income, cost, interest, age) => {
     const errors = []
 
     if (income <= 0) {
@@ -116,9 +116,6 @@ const validateInput = (income, cost, netWorth, interest, age) => {
     if (cost <= 0) {
         errors.push("Your cost must be a number larger than 0!<br>");
     }
-    // if (netWorth % 1 !== 0) {
-    //     errors.push("Your net worth must be a positive, whole number larger than 0! ");
-    // }
     if (interest <= 0) {
         errors.push("The interest rate must be a number larger than 0!<br>");
     }
