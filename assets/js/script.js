@@ -22,6 +22,13 @@ buttonEl.addEventListener('click', () => {
     renderOutput();
 })
 
+ageEl.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        renderOutput();
+    }
+})
+
+
 /**
  * Calculate the relevant output values, based on the given input values
  */
