@@ -18,8 +18,7 @@
  */
 
     buttonEl.addEventListener('click',() => {
-        console.log("hello");
-        calculateRetirementAge();
+        renderOutput();
     })
 
 /**
@@ -27,7 +26,7 @@
  */
 
 const calculateRetirementAge = () => {
-    validateInput();
+    // validateInput();
     
     const income = parseInt(incomeEl.value);
     const cost = parseInt(costEl.value);
@@ -43,19 +42,39 @@ const calculateRetirementAge = () => {
     while (currentWorth < netWorthNeeded) {
         if (yearCounter === 0) {
             currentWorth *= (1 + interest);
-            yearCounter++
+            yearCounter++;
         } else {
             currentWorth = (currentWorth + annualSavings) * (1 + interest);
             yearCounter++;
         }
     }
 
-    console.log(yearCounter);
-    console.log(currentWorth);
-
     const retirementAge = age + yearCounter;
+    const savingsValue = yearCounter * annualSavings;
+    const roiValue = currentWorth - savingsValue;
+    
+    return [retirementAge, yearCounter, currentWorth, savingsValue, roiValue];
 }
 
-const validateInput = () => {
+const renderOutput = () => {
+    const outputArray = calculateRetirementAge();
+    if (outputArray[1] < 10) {
+        retirementAgeEl.textContent = `Awesome, you can already retire in about ${outputArray[1]} years, when you are ${outputArray[0]} years old!`;
+    } else if (outputArray[1] >= 10 && outputArray[1] < 20) {
+        retirementAgeEl.textContent = `Not bad, you can retire in about ${outputArray[1]} years, when you are ${outputArray[0]} years old!`;
+    } else if (outputArray[1] >= 20 && outputArray[0] < 75) {
+        retirementAgeEl.textContent = `Hang in there, you can retire in about ${outputArray[1]} years, when you are still just ${outputArray[0]} years old!`;
+    } else {
+        retirementAgeEl.textContent = `You can retire in about ${outputArray[1]} years, when you are ${outputArray[0]} years old. Let's hope you're still alive to enjoy it then!`;
+    }
 
+    portfolioValueEl.textContent = `${Math.round(outputArray[2])}€`;
+    savingsValueEl.textContent = `${outputArray[3]}€`;
+    roiValueEl.textContent = `${Math.round(outputArray[4])}€`;
 }
+
+
+
+// const validateInput = () => {
+
+// }
