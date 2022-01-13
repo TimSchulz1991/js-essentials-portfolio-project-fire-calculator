@@ -191,6 +191,63 @@ hr {
     margin-top: 20px;
 }
 
+/* FAQ area */
+
+#faq-heading {
+    font-size: 1.5rem;
+    padding: 30px;
+}
+        /* The following CSS base code regarding the flipping cards is taken from https://www.w3schools.com/howto/howto_css_flip_card.asp, but was remodelled based on own preferences. */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    display: inline-block;
+    margin: 0 30px 60px;
+  }
+
+  .flip-card-inner {
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 5px 1px #7D7B7D; 
+    box-shadow: 1px 1px 5px 1px #7D7B7D;
+  }
+
+  .flip-card-front {
+    background-color: #30475E;
+    color: #EEEAED;
+  }
+
+  .flip-card-back {
+    background-color: #EEEAED;
+    color: #30475E;
+    transform: rotateY(180deg);
+  }
+
+  .question-card {
+      font-size: 1.5rem;
+      padding-top: 120px;
+  }
+
 /* Footer area */
 
 footer {
