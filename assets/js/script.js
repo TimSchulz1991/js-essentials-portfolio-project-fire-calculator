@@ -27,20 +27,14 @@ buttonEl.addEventListener('click', () => {
  */
 
 const calculateOutputValues = () => {
-    const incomeElValue = incomeEl.value;
-    const costElValue = costEl.value;
-    const netWorthElValue = netWorthEl.value;
-    const interestElValue = interestEl.value;
-    const ageElValue = ageEl.value;
+    const income = parseInt(incomeEl.value);
+    const cost = parseInt(costEl.value);
+    const netWorth = parseInt(netWorthEl.value);
+    const interest = parseInt(interestEl.value) / 100;
+    const age = parseInt(ageEl.value);
 
-    const errors = validateInput(incomeElValue, costElValue, netWorthElValue, interestElValue, ageElValue);
+    const errors = validateInput(income, cost, netWorth, interest, age);
     if (errors === null) {
-        const income = parseInt(incomeElValue);
-        const cost = parseInt(costElValue);
-        const netWorth = parseInt(netWorthElValue);
-        const interest = parseInt(interestElValue) / 100;
-        const age = parseInt(ageElValue);
-
         const netWorthNeeded = cost * 25;
         const annualSavings = income - cost;
         let currentWorth = netWorth;
@@ -116,20 +110,20 @@ const renderOutput = () => {
 const validateInput = (income, cost, netWorth, interest, age) => {
     const errors = []
 
-    if (income <= 0 || income % 1 !== 0) {
-        errors.push("Your income must be a positive, whole number larger than 0!<br>");
+    if (income <= 0) {
+        errors.push("Your income must be a number larger than 0!<br>");
     }
-    if (cost <= 0 || cost % 1 !== 0) {
-        errors.push("Your cost must be a positive, whole number larger than 0! ");
+    if (cost <= 0) {
+        errors.push("Your cost must be a number larger than 0!<br>");
     }
-    if (netWorth % 1 !== 0) {
-        errors.push("Your net worth must be a positive, whole number larger than 0! ");
-    }
+    // if (netWorth % 1 !== 0) {
+    //     errors.push("Your net worth must be a positive, whole number larger than 0! ");
+    // }
     if (interest <= 0) {
-        errors.push("The interest rate must be a positive number larger than 0! ");
+        errors.push("The interest rate must be a number larger than 0!<br>");
     }
-    if (age <= 0 || age % 1 !== 0) {
-        errors.push("Your age must be a positive, whole number larger than 0! ");
+    if (age <= 0) {
+        errors.push("Your age must be a number larger than 0!");
     }
     return errors.length !== 0 ? errors : null;
 }
@@ -144,26 +138,3 @@ const renderWarnings = (errors) => {
         warningEl.innerHTML += error;
     }
 }
-
-// let warningMessage = "";
-//     const warnings = {
-//         incomeWarning: "Your income must be a positive, whole number larger than 0! ",
-//         costWarning: "Your income must be a positive, whole number larger than 0! ",
-//         netWorthWarning: "Your current net worth must be a whole number! ",
-//         interestWarning: "The interest rate must be a positive number larger than 0! ",
-//         ageWarning: "Your age must be a positive, whole number larger than 0! "
-//     }
-
-//     if (income <= 0 || income % 1 !== 0) {
-//         warningMessage += warnings.incomeWarning;
-//     } else if (cost <= 0 || cost % 1 !== 0) {
-//         warningMessage += warnings.costWarning;
-//     } else if (netWorth % 1 !== 0) {
-//         warningMessage += warnings.netWorthWarning;
-//     } else if (interest <= 0) {
-//         warningMessage += warnings.interestWarning;
-//     } else if (age <= 0 || age % 1 !== 0) {
-//         warningMessage += warnings.ageWarning;
-//     };
-
-//     warningEl.textContent = warningMessage;
