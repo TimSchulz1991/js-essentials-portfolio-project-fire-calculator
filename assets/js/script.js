@@ -98,9 +98,9 @@ const renderOutput = () => {
             retirementAgeEl.textContent = `You can retire in about ${yearCounter} years, when you are ${retirementAge} years old. Let's hope you're still alive to enjoy it then!`;
         }
 
-        portfolioValueEl.textContent = `${Math.round(currentWorth)}€`;
-        savingsValueEl.textContent = `${savingsValue}€`;
-        roiValueEl.textContent = `${Math.round(roiValue)}€`;
+        portfolioValueEl.textContent = `${Math.round(currentWorth).toLocaleString()} €`;
+        savingsValueEl.textContent = `${savingsValue.toLocaleString()} €`;
+        roiValueEl.textContent = `${Math.round(roiValue).toLocaleString()} €`;
         warningEl.textContent = "";
     } else {
         retirementAgeEl.textContent = "Make sure you insert valid values";
