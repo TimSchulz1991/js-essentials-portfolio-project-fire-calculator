@@ -194,7 +194,8 @@ hr {
 #portfolio-val, 
 #savings-val,
 #roi-val {
-    color: #F05454;
+    color: #30475E;
+    font-size: 1.4rem;
 }
 
 /* FAQ area */
@@ -271,6 +272,10 @@ hr {
   }
 
   @media screen and (max-width: 1024px) {
+    .flip-card {
+        height: 470px;
+    }
+
       .question-card {
           padding: 30px 20px 30px;
       }
