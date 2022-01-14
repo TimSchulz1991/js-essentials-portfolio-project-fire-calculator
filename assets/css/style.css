@@ -265,6 +265,39 @@ hr {
       height: 150px;
   }
 
+  .small-screen-card,
+  .small-screen-image {
+      display: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+      .question-card {
+          padding: 30px 20px 30px;
+      }
+
+      .small-screen-card {
+          font-size: 1rem;
+          display: block;
+          padding: 0 25px;
+      }
+
+      .small-screen-image {
+          width: 150px;
+          height: 150px;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 20px;
+      }
+
+      .small-screen-card a {
+          color: #F05454;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: none;
+      }
+  }
+
 /* Footer area */
 
 footer {
