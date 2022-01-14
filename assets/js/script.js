@@ -22,7 +22,8 @@ buttonEl.addEventListener('click', () => {
     renderOutput();
 })
 
-ageEl.addEventListener('keydown', (event) => { /* This event listener adds the option to render the results by pressing the Enter key in the last input field (age) */
+ageEl.addEventListener('keydown', (event) => {
+    /* This event listener adds the option to render the results by pressing the Enter key in the last input field (age) */
     if (event.key === "Enter") {
         renderOutput();
     }
@@ -34,20 +35,22 @@ ageEl.addEventListener('keydown', (event) => { /* This event listener adds the o
  */
 
 const calculateOutputValues = () => {
-    const income = parseInt(incomeEl.value);
+    const income = parseInt(incomeEl.value); /* Grab all the values the user inputted */
     const cost = parseInt(costEl.value);
     const netWorth = parseInt(netWorthEl.value);
     const interest = parseFloat(interestEl.value) / 100;
     const age = parseInt(ageEl.value);
 
-    const errors = validateInput(income, cost, interest, age);
+    const errors = validateInput(income, cost, interest, age); /* Validate the input fields with a function */
     if (errors === null) {
+        /* Do all these calculations if there are no errors */
         const netWorthNeeded = cost * 25;
         const annualSavings = income - cost;
         let currentWorth = netWorth;
         let yearCounter = 0;
 
         while (currentWorth < netWorthNeeded) {
+            /* Using a while loop to increase the net worth until the year that the necessary amount is surpassed. */
             if (yearCounter === 0) {
                 currentWorth *= (1 + interest);
                 yearCounter++;
@@ -62,6 +65,7 @@ const calculateOutputValues = () => {
         const roiValue = currentWorth - savingsValue;
 
         return {
+            /* Return the relevant values to render out  */
             retirementAge,
             yearCounter,
             currentWorth,
@@ -69,7 +73,7 @@ const calculateOutputValues = () => {
             roiValue
         };
     } else {
-        renderWarnings(errors);
+        renderWarnings(errors); /* If the validation failed, return warning messages and return null */
         return null;
     }
 }
@@ -79,16 +83,18 @@ const calculateOutputValues = () => {
  */
 
 const renderOutput = () => {
-    const result = calculateOutputValues()
+    const result = calculateOutputValues() /* Get all the relevant values from the previous function (or null if there was an error) */
     if (result !== null) {
+        /* Do all of the following if there were no errors */
         const {
             retirementAge,
             yearCounter,
             currentWorth,
             savingsValue,
             roiValue
-        } = result;
+        } = result; /* Destructure the results variable */
         if (yearCounter < 10) {
+            /* Render out all the calculated values to the page. The main message is dependent on the amount of years it takes to retire and on the user's age */
             retirementAgeEl.textContent = `Awesome, you can already retire in about ${yearCounter} years, when you are ${retirementAge} years old!`;
         } else if (yearCounter >= 10 && yearCounter < 20) {
             retirementAgeEl.textContent = `Not bad, you can retire in about ${yearCounter} years, when you are ${retirementAge} years old!`;
@@ -103,6 +109,7 @@ const renderOutput = () => {
         roiValueEl.textContent = `${Math.round(roiValue).toLocaleString()} €`;
         warningEl.textContent = "";
     } else {
+        /* If there are errors, give the appropriate message to the user and make sure the previous rendered out values disappear */
         retirementAgeEl.textContent = "Make sure you insert valid values";
         portfolioValueEl.textContent = "";
         savingsValueEl.textContent = "";
@@ -116,7 +123,7 @@ const renderOutput = () => {
 
 const validateInput = (income, cost, interest, age) => {
     const errors = []
-
+    /* Keep pushing errors to the errors array (if there are any)*/
     if (income <= 0) {
         errors.push("Your income must be a number larger than 0!<br>");
     }
@@ -129,7 +136,7 @@ const validateInput = (income, cost, interest, age) => {
     if (age <= 0) {
         errors.push("Your age must be a number larger than 0!");
     }
-    return errors.length !== 0 ? errors : null;
+    return errors.length !== 0 ? errors : null; /* Return the errors array if there is more than 0 errors, otherwise return null, so that the calculations above are triggered */
 }
 
 /** 
@@ -137,7 +144,7 @@ const validateInput = (income, cost, interest, age) => {
  */
 
 const renderWarnings = (errors) => {
-    warningEl.textContent = "";
+    warningEl.textContent = ""; /* By setting the warning text content to an empty string first, you make sure that new warnings are not just appended when the calculations are done repeatedly */
     for (let error of errors) {
         warningEl.innerHTML += error;
     }
