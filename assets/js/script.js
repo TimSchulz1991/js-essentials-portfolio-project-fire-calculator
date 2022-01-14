@@ -22,7 +22,7 @@ buttonEl.addEventListener('click', () => {
     renderOutput();
 })
 
-ageEl.addEventListener('keydown', (event) => {
+ageEl.addEventListener('keydown', (event) => { /* This event listener adds the option to render the results by pressing the Enter key in the last input field (age) */
     if (event.key === "Enter") {
         renderOutput();
     }
@@ -37,7 +37,7 @@ const calculateOutputValues = () => {
     const income = parseInt(incomeEl.value);
     const cost = parseInt(costEl.value);
     const netWorth = parseInt(netWorthEl.value);
-    const interest = parseInt(interestEl.value) / 100;
+    const interest = parseFloat(interestEl.value) / 100;
     const age = parseInt(ageEl.value);
 
     const errors = validateInput(income, cost, interest, age);
