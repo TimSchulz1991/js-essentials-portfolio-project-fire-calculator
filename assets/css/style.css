@@ -206,8 +206,8 @@ hr {
         /* The following CSS base code regarding the flipping cards is taken from https://www.w3schools.com/howto/howto_css_flip_card.asp, but was remodelled based on own preferences. */
 .flip-card {
     background-color: transparent;
-    width: 380px;
-    height: 380px;
+    width: 320px;
+    height: 440px;
     perspective: 1000px;
     display: inline-block;
     margin: 0 30px 60px;
@@ -256,7 +256,7 @@ hr {
 
   .answer-card {
       font-size: 1.1rem;
-      padding: 40px 30px 0;
+      padding: 30px 30px 0;
   }
 
   .flip-card-back img {
