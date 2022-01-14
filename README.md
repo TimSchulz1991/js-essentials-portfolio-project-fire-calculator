@@ -26,3 +26,10 @@ The tool is easy to use, so that anyone can calculate their potential future ret
 
 - ### Wireframes
     - The following wireframe shows the general outline of the page as it was intended. The only real difference in the final page is that I made the FAQ more prominent than I had originally thought. 
+    ![This wireframe shows the whole page outline](/documentation/wireframes/wireframe.png)
+
+## Features
+In the following section, I will give a brief overview of all the features of the page. All of them are responsive on all device sizes.
+
+### Header and Calculator tool
+- The header does not require  
