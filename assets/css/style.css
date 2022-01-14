@@ -191,6 +191,12 @@ hr {
     margin-top: 20px;
 }
 
+#portfolio-val, 
+#savings-val,
+#roi-val {
+    color: #F05454;
+}
+
 /* FAQ area */
 
 #faq-heading {

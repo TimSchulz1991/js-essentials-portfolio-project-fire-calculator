@@ -93,6 +93,7 @@ const renderOutput = () => {
             savingsValue,
             roiValue
         } = result; /* Destructure the results variable */
+
         if (yearCounter < 10) {
             /* Render out all the calculated values to the page. The main message is dependent on the amount of years it takes to retire and on the user's age */
             retirementAgeEl.textContent = `Awesome, you can already retire in about ${yearCounter} years, when you are ${retirementAge} years old!`;
