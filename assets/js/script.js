@@ -83,7 +83,8 @@ const calculateOutputValues = () => {
  */
 
 const renderOutput = () => {
-    const result = calculateOutputValues() /* Get all the relevant values from the previous function (or null if there was an error) */
+    retirementAgeEl.style.textDecoration = "underline";
+    const result = calculateOutputValues(); /* Get all the relevant values from the previous function (or null if there was an error) */
     if (result !== null) {
         /* Do all of the following if there were no errors */
         const {
