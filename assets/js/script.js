@@ -13,6 +13,7 @@ const buttonEl = document.getElementById("calculate");
 const portfolioValueEl = document.getElementById("portfolio-val");
 const savingsValueEl = document.getElementById("savings-val");
 const roiValueEl = document.getElementById("roi-val");
+const outputAreaEl = document.getElementById("output-area");
 
 /**
  * Add event listeners
@@ -41,7 +42,7 @@ const calculateOutputValues = () => {
     const interest = parseFloat(interestEl.value) / 100;
     const age = parseInt(ageEl.value);
 
-    const errors = validateInput(income, cost, interest, age); /* Validate the input fields with a function */
+    const errors = validateInput(income, cost, netWorth, interest, age); /* Validate the input fields with a function */
     if (errors === null) {
         /* Do all these calculations if there are no errors */
         const netWorthNeeded = cost * 25;
@@ -110,32 +111,37 @@ const renderOutput = () => {
         savingsValueEl.textContent = `${savingsValue.toLocaleString()} €`;
         roiValueEl.textContent = `${Math.round(roiValue).toLocaleString()} €`;
         warningEl.textContent = "";
+        outputAreaEl.classList.remove("hidden"); /* Remove the hidden class from the output area as soon as user input valid values */
     } else {
         /* If there are errors, give the appropriate message to the user and make sure the previous rendered out values disappear */
         retirementAgeEl.textContent = "Make sure you insert valid values";
-        portfolioValueEl.textContent = "";
-        savingsValueEl.textContent = "";
-        roiValueEl.textContent = "";
+        portfolioValueEl.textContent = "UNDEFINED";
+        savingsValueEl.textContent = "UNDEFINED";
+        roiValueEl.textContent = "UNDEFINED";
     }
+    
 }
 
 /**
  * This function validates all the input values
  */
 
-const validateInput = (income, cost, interest, age) => {
+const validateInput = (income, cost, netWorth, interest, age) => {
     const errors = []
     /* Keep pushing errors to the errors array (if there are any)*/
-    if (income <= 0) {
+    if (income <= 0 || isNaN(income)) {
         errors.push("Your income must be a number larger than 0!<br>");
     }
-    if (cost <= 0) {
+    if (cost <= 0 || isNaN(cost)) {
         errors.push("Your cost must be a number larger than 0!<br>");
     }
-    if (interest <= 0) {
+    if (isNaN(netWorth)) {
+        errors.push("Please provide your current net worth!<br>");
+    }
+    if (interest <= 0 || isNaN(interest)) {
         errors.push("The interest rate must be a number larger than 0!<br>");
     }
-    if (age <= 0) {
+    if (age <= 0 || isNaN(age)) {
         errors.push("Your age must be a number larger than 0!");
     }
     return errors.length !== 0 ? errors : null; /* Return the errors array if there is more than 0 errors, otherwise return null, so that the calculations above are triggered */

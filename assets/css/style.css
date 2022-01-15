@@ -181,6 +181,10 @@ hr {
 
 /* --> Output area */
 
+.hidden {
+    display: none;
+}
+
 #output-area p {
     padding-bottom: 30px;
 }
