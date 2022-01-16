@@ -51,7 +51,7 @@ const calculateOutputValues = () => {
         let yearCounter = 0;
 
         while (currentWorth < netWorthNeeded) {
-            /* Using a while loop to increase the net worth until the year that the necessary amount is surpassed. */
+            /* Using a while loop to increase the net worth until the year that the necessary amount is surpassed */
             if (yearCounter === 0) {
                 currentWorth *= (1 + interest);
                 yearCounter++;
@@ -61,8 +61,14 @@ const calculateOutputValues = () => {
             }
         }
 
-        const retirementAge = age + yearCounter;
-        const savingsValue = yearCounter * annualSavings + netWorth;
+        let retirementAge = age + yearCounter;
+        let savingsValue = yearCounter * annualSavings + netWorth;
+        /* Making sure that the ROI value vannot be negative under certain input conditions */
+        if (savingsValue > currentWorth) {
+            savingsValue = (yearCounter -1) * annualSavings + netWorth;
+            yearCounter--;
+            retirementAge--;
+        }
         const roiValue = currentWorth - savingsValue;
 
         return {
@@ -96,8 +102,10 @@ const renderOutput = () => {
             roiValue
         } = result; /* Destructure the results variable */
 
-        if (yearCounter < 10) {
-            /* Render out all the calculated values to the page. The main message is dependent on the amount of years it takes to retire and on the user's age */
+        /* Render out all the calculated values to the page. The main message is dependent on the amount of years it takes to retire and on the user's age */
+        if (yearCounter === 1) {
+            retirementAgeEl.textContent = `Incredible, you can already retire next year, when you are ${retirementAge} years old!`
+        } else if (yearCounter > 1 && yearCounter < 10) {
             retirementAgeEl.textContent = `Awesome, you can already retire in about ${yearCounter} years, when you are ${retirementAge} years old!`;
         } else if (yearCounter >= 10 && yearCounter < 20) {
             retirementAgeEl.textContent = `Not bad, you can retire in about ${yearCounter} years, when you are ${retirementAge} years old!`;
