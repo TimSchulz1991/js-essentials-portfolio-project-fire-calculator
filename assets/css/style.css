@@ -202,6 +202,17 @@ hr {
     font-size: 1.4rem;
 }
 
+#send-email {
+    background: #30475E; 
+}
+
+#send-email:hover {
+    background: #F05454;
+    transform:scale(1.03,1.03); /* With the help of https://stackoverflow.com/questions/20504346/increasing-the-width-of-button-by-a-few-percent-on-hover */
+    -webkit-transform:scale(1.03,1.03);
+    -moz-transform:scale(1.03,1.03);
+}
+
 /* FAQ area */
 
 #faq-heading {

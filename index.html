@@ -32,31 +32,38 @@
                 <form>
                     <div class="input-container">
                         <label for="income-el">My annual income (in €): </label>
-                        <input type="number" id="income-el" min="0">
+                        <input type="number" id="income-el" name="income">
 
                         <label for="cost-el">My annual costs (in €): </label>
-                        <input type="number" id="cost-el" min="0">
+                        <input type="number" id="cost-el" name="cost">
 
                         <label for="net-worth-el">My current net worth (in €): </label>
-                        <input type="number" id="net-worth-el" min="0">
+                        <input type="number" id="net-worth-el" name="net-worth">
 
                         <label for="interest-el">Annual anticipated return (in %): </label>
-                        <input type="number" id="interest-el" min="0">
+                        <input type="number" id="interest-el" name="interest">
 
                         <label for="age-el">My current age: </label>
-                        <input type="number" id="age-el" min="0" max="100">
+                        <input type="number" id="age-el" name="age">
                     </div>
                 </form>
                 <p id="warning"></p>
                 <button id="calculate">Calculate time until retirement</button>
             </div>
-            
+
             <!-- Show output of calculation to the user -->
             <div id="output-area" class="hidden">
                 <hr>
                 <p class="large-p">Total Net Worth: <br><br><span id="portfolio-val"></span></p>
                 <p>of which is savings: <br><br><span id="savings-val"></span></p>
                 <p>of which is return on investment: <br><br><span id="roi-val"></span></p>
+                <hr>
+                <form>
+                    <p>Would you like your results sent in an email?</p>
+                    <label for="to-email">Your email: </label>
+                    <input type="email" id="to-email" name="email">
+                </form>
+                <button id="send-email">Send me my results</button>
             </div>
         </div>
     </section>
@@ -69,7 +76,8 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <h3 class="question-card">What is the FIRE movement?</h3>
-                    <p class="small-screen-card">Financial Independence, Retire Early (FIRE) is a movement of people devoted
+                    <p class="small-screen-card">Financial Independence, Retire Early (FIRE) is a movement of people
+                        devoted
                         to a program of extreme savings and investment that aims to allow them to retire far earlier
                         than traditional budgets and retirement plans would permit. Born out of the 1992 best-selling
                         book "Your Money or Your Life" by Vicki Robin and Joe Dominguez, FIRE came to embody a core
@@ -96,7 +104,8 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <h3 class="question-card">What are the calculations based on?</h3>
-                    <p class="small-screen-card">These calculation are based on the Four Percent Rule. It is a rule of thumb
+                    <p class="small-screen-card">These calculation are based on the Four Percent Rule. It is a rule of
+                        thumb
                         used to determine how much a retiree should withdraw from a retirement account each year. This
                         rule seeks to provide a steady income
                         stream to the retiree while also maintaining an account balance that keeps income flowing
@@ -125,8 +134,10 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <h3 class="question-card">Who is behind this page?</h3>
-                    <img src="assets/images/Tim.jpg" alt="Tim Schulz, creator of this Fire calculator" class="small-screen-image">
-                    <p class="small-screen-card">My name is Tim Schulz, serial entrepreneur and FIRE enthusiast from Germany,
+                    <img src="assets/images/Tim.jpg" alt="Tim Schulz, creator of this Fire calculator"
+                        class="small-screen-image">
+                    <p class="small-screen-card">My name is Tim Schulz, serial entrepreneur and FIRE enthusiast from
+                        Germany,
                         living in Malmö, Sweden. If you have any questions about the FIRE movement, don't hesitate to
                         contact me via the channels provided below.</p>
                 </div>
