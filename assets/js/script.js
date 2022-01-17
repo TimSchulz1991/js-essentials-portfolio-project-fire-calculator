@@ -10,12 +10,14 @@ const interestEl = document.getElementById("interest-el");
 const ageEl = document.getElementById("age-el");
 const warningEl = document.getElementById("warning");
 const buttonEl = document.getElementById("calculate");
+
 const portfolioValueEl = document.getElementById("portfolio-val");
 const savingsValueEl = document.getElementById("savings-val");
 const roiValueEl = document.getElementById("roi-val");
 const outputAreaEl = document.getElementById("output-area");
 const emailParagraphEl = document.getElementById("email-paragraph");
 const toEmailEl = document.getElementById("to-email");
+const retirementAge2El = document.getElementById("retirement-age-2");
 
 /**
  * Add event listeners
@@ -119,6 +121,7 @@ const renderOutput = () => {
             retirementAgeEl.textContent = `You can retire in about ${yearCounter} years, when you are ${retirementAge} years old. Let's hope you're still alive to enjoy it then!`;
         }
 
+        retirementAge2El.textContent = `${retirementAge}`;
         portfolioValueEl.textContent = `${Math.round(currentWorth).toLocaleString()} €`;
         savingsValueEl.textContent = `${savingsValue.toLocaleString()} €`;
         roiValueEl.textContent = `${Math.round(roiValue).toLocaleString()} €`;
