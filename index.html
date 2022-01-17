@@ -59,7 +59,7 @@
                 <p>of which is return on investment: <br><br><span id="roi-val"></span></p>
                 <hr>
                 <form id="email-form">
-                    <p>Would you like to receive your results as an email?</p>
+                    <p id="email-paragraph">Would you like to receive your results as an email?</p>
                     <label for="to-email">Your email: </label>
                     <input type="email" id="to-email" name="email">
                 </form>
@@ -168,6 +168,15 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/34953ef7dd.js" crossorigin="anonymous"></script>
+
+    <!-- EmailJS Setup -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_kZCNhVcITasn6jTcR5PL2");
+        })();
+    </script>
 
 </body>
 

@@ -14,6 +14,8 @@ const portfolioValueEl = document.getElementById("portfolio-val");
 const savingsValueEl = document.getElementById("savings-val");
 const roiValueEl = document.getElementById("roi-val");
 const outputAreaEl = document.getElementById("output-area");
+const emailParagraphEl = document.getElementById("email-paragraph");
+const toEmailEl = document.getElementById("to-email");
 
 /**
  * Add event listeners
@@ -65,7 +67,7 @@ const calculateOutputValues = () => {
         let savingsValue = yearCounter * annualSavings + netWorth;
         /* Making sure that the ROI value vannot be negative under certain input conditions */
         if (savingsValue > currentWorth) {
-            savingsValue = (yearCounter -1) * annualSavings + netWorth;
+            savingsValue = (yearCounter - 1) * annualSavings + netWorth;
             yearCounter--;
             retirementAge--;
         }
@@ -122,14 +124,13 @@ const renderOutput = () => {
         roiValueEl.textContent = `${Math.round(roiValue).toLocaleString()} €`;
         warningEl.textContent = "";
         outputAreaEl.classList.remove("hidden"); /* Remove the hidden class from the output area as soon as user input valid values --> thanks for explaining this concept to my mentor Antonio */
+        emailParagraphEl.textContent = "Would you like to receive your results as an email?";
     } else {
-        /* If there are errors, give the appropriate message to the user and make sure the previous rendered out values disappear */
+        /* If there are errors, give the appropriate message to the user and make sure the output area is hidden (again) */
         retirementAgeEl.textContent = "Make sure you insert valid values";
-        portfolioValueEl.textContent = "UNDEFINED";
-        savingsValueEl.textContent = "UNDEFINED";
-        roiValueEl.textContent = "UNDEFINED";
+        outputAreaEl.classList.add("hidden"); /* Add the hidden class back in as soon as some input value contains an error */
     }
-    
+
 }
 
 /**
@@ -166,4 +167,44 @@ const renderWarnings = (errors) => {
     for (let error of errors) {
         warningEl.innerHTML += error;
     }
+}
+
+/**
+ * EmailJS setup with the help of https://www.youtube.com/watch?v=x7Ewtay0Q78&ab_channel=CodewithVoran and the EmailJS instructions
+ */
+
+document.getElementById("send-email").addEventListener('click', () => {
+    sendMail();
+})
+
+const sendMail = () => {
+    let {
+        retirementAge,
+        yearCounter,
+        currentWorth,
+        savingsValue,
+        roiValue
+    } = calculateOutputValues();
+
+    currentWorth = Math.round(currentWorth).toLocaleString();
+    savingsValue = savingsValue.toLocaleString();
+    roiValue = Math.round(roiValue).toLocaleString();
+
+    let tempParams = {
+        to_email: toEmailEl.value,
+        yearCounter,
+        retirementAge,
+        currentWorth,
+        savingsValue,
+        roiValue
+    }
+    // If this was a real project, I should figure out a way to my EmailJS IDs below
+    emailjs.send("service_isgt4xx", "template_hsr3px7", tempParams).then((res) => {
+        console.log("success", res.status);
+    }).catch((error) => {
+        console.log("error", error);
+    })
+
+    emailParagraphEl.textContent = "An email with your results has been sent to you!"
+    toEmailEl.value = "";
 }
