@@ -25,14 +25,14 @@ const retirementAge2El = document.getElementById("retirement-age-2");
 
 buttonEl.addEventListener('click', () => {
     renderOutput();
-})
+});
 
 ageEl.addEventListener('keydown', (event) => {
     /* This event listener adds the option to render the results by pressing the Enter key in the last input field (age) */
     if (event.key === "Enter") {
         renderOutput();
     }
-})
+});
 
 
 /**
@@ -87,7 +87,7 @@ const calculateOutputValues = () => {
         renderWarnings(errors); /* If the validation failed, return warning messages and return null */
         return null;
     }
-}
+};
 
 /**
  * This function renders the output to the page
@@ -108,9 +108,9 @@ const renderOutput = () => {
 
         /* Render out all the calculated values to the page. The main message is dependent on the amount of years it takes to retire and on the user's age */
         if (yearCounter === 0) {
-            retirementAgeEl.textContent = `What are you even using this calculator for, you can already retire 😊`
+            retirementAgeEl.textContent = `What are you even using this calculator for, you can already retire 😊`;
         } else if (yearCounter === 1) {
-            retirementAgeEl.textContent = `Incredible, you can already retire next year, when you are ${retirementAge} years old!`
+            retirementAgeEl.textContent = `Incredible, you can already retire next year, when you are ${retirementAge} years old!`;
         } else if (yearCounter > 1 && yearCounter < 10) {
             retirementAgeEl.textContent = `Awesome, you can already retire in about ${yearCounter} years, when you are ${retirementAge} years old!`;
         } else if (yearCounter >= 10 && yearCounter < 20) {
@@ -134,14 +134,14 @@ const renderOutput = () => {
         outputAreaEl.classList.add("hidden"); /* Add the hidden class back in as soon as some input value contains an error */
     }
 
-}
+};
 
 /**
  * This function validates all the input values
  */
 
 const validateInput = (income, cost, netWorth, interest, age) => {
-    const errors = []
+    const errors = [];
     /* Keep pushing errors to the errors array (if there are any)*/
     if (income <= 0 || isNaN(income)) {
         errors.push("Your income must be a number larger than 0!<br>");
@@ -159,7 +159,7 @@ const validateInput = (income, cost, netWorth, interest, age) => {
         errors.push("Your age must be a number larger than 0!");
     }
     return errors.length !== 0 ? errors : null; /* Return the errors array if there is more than 0 errors, otherwise return null, so that the calculations above are triggered */
-}
+};
 
 /** 
  * This function renders out the warnings to the page 
@@ -170,7 +170,7 @@ const renderWarnings = (errors) => {
     for (let error of errors) {
         warningEl.innerHTML += error;
     }
-}
+};
 
 /**
  * EmailJS setup with the help of https://www.youtube.com/watch?v=x7Ewtay0Q78&ab_channel=CodewithVoran and the EmailJS instructions
@@ -178,7 +178,7 @@ const renderWarnings = (errors) => {
 
 document.getElementById("send-email").addEventListener('click', () => {
     sendMail();
-})
+});
 
 const sendMail = () => {
     let {
@@ -200,14 +200,14 @@ const sendMail = () => {
         currentWorth,
         savingsValue,
         roiValue
-    }
+    };
     // If this was a real project, I should figure out a way to my EmailJS IDs below
     emailjs.send("service_isgt4xx", "template_hsr3px7", tempParams).then((res) => {
         console.log("success", res.status);
     }).catch((error) => {
         console.log("error", error);
-    })
+    });
 
-    emailParagraphEl.textContent = "An email with your results has been sent to you!"
+    emailParagraphEl.textContent = "An email with your results has been sent to you!";
     toEmailEl.value = "";
-}
+};

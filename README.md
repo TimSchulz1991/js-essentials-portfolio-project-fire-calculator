@@ -4,7 +4,7 @@ This fully-responsive calculation tool helps people, who are interested in FIRE 
 
 The tool is easy to use, so that anyone can calculate their potential future retirement age with only a handful of values and get excited about the prospects of this (in case the results are exciting, that is).
 
-![This image provides an overview of the first section of the page on all screen sizes](/documentation/testing/am-i-responsive.png)
+![This image provides an overview of the first section of the page on all screen sizes](documentation/testing/am-i-responsive.png)
 
 ## User Experience (UX)
 - ### User Stories
@@ -26,10 +26,74 @@ The tool is easy to use, so that anyone can calculate their potential future ret
 
 - ### Wireframes
     - The following wireframe shows the general outline of the page as it was intended. The only real difference in the final page is that I made the FAQ more prominent than I had originally thought. 
-    ![This wireframe shows the whole page outline](/documentation/wireframes/wireframe.png)
+    ![This wireframe shows the whole page outline](documentation/wireframes/wireframe.png)
 
 ## Features
 In the following section, I will give a brief overview of all the features of the page. All of them are responsive on all device sizes.
 
-### Header and Calculator tool
-- The header does not require  
+- ### Header and calculator input
+    - The header does not require any navigation section, as the page has only one main feature and a FAQ section; the websites logo is shown in the center of the header.
+    - The input section of the calculator asks for 5 different values that are needed to calculate the future retirement age: current income, current costs, current net worth, anticipated return of the market and your current age.
+    - When the values were entered correctly, the output section will appear and you will already see your future retirement age in the headline of the input section (and how long it will take you to get there).
+    - If an error was made in the input section (i.e. an invalid value was entered), this section will show warnings and how to fix the error(s).
+    ![This screenshot shows the header and calculator input section on a desktop screen](documentation/feature-screenshots/calculator-input.png)
+
+- ### Calculator output
+    - The output section of the calculator only appears after the input values have been validated successfully. It shows the calculated future retirement age, the total future portfolio value and how much of that contitutes savings and how much return on investment. 
+    - This section also allows you to send the results to yourself via email. 
+![This screenshot shows the calculator output section on a desktop screen](documentation/feature-screenshots/calculator-output.png)
+
+- ### FAQ section
+    - This section answers the most relevant questions: What is the FIRE movement and how is the calculation of the future retirement age done? Furthermore, the visitor can learn more about the developer of the page in this section.
+    - While the "cards" in this section have a rotation effect on desktop, they are static cards on mobile.
+    ![This screenshot shows the FAQ section on a desktop screen](documentation/feature-screenshots/faq.png)
+
+- ### Footer
+    - In the footer section, website visitors can get in touch with the developer and talk more about FIRE, either via Facebook, Instagram or mail. 
+    ![This screenshot shows the footer section on a desktop screen](documentation/feature-screenshots/footer.png)
+
+### Features left to implement
+    - In the future I would like to implement a graph/diagram that shows how the portfolio is growing over time until financial independence is reached.
+
+
+## ## Technologies Used
+### Languages Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+### Frameworks, Libraries, Websites & Programs Used
+1. [Google Fonts](https://fonts.google.com/)
+    - Google fonts was used to import the 'Arvo' and 'Lato' fonts into the style.css file.
+2. [Font Awesome](https://fontawesome.com/)
+    - Font Awesome was used in the footer section of the website to add icons for aesthetic and UX purposes.
+3. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+4. [GitHub](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+5. [Excalidraw](https://excalidraw.com/)
+    - Excalidraw was used to create the wireframe for this project.
+6. [tinypng.com](https://tinypng.com/)
+    - This website was used to decrease the file size of images.
+7. [reliablepsd.com/](https://reliablepsd.com/ultimate-google-font-pairings/)
+    - This website was used to find a nice font pair.
+8. [html-css-js.com](https://html-css-js.com/css/generator/box-shadow/)
+    - This website was used to generate CSS code for shadows throughout the page.
+9. [grid.malven.co/](https://grid.malven.co/)
+    - This website was used to get help with different CSS grid properties for my inout section.
+10. [mycolor.space/](https://mycolor.space/)
+    - This website was used to find complimentary colors.
+11. [unsplash.com/](https://unsplash.com/)
+    - This website was used to find a suitable hero image.
+12. [www.favicon.cc/](https://www.favicon.cc/)
+    - This website was used to generate a suitable favicon.
+13. [www.emailjs.com/](https://www.emailjs.com/)
+    - EmailJS was used to offer the visitor to send the results of the calculator directly to the visitor's email.
+
+
+## Testing
+
+### Validator Testing
+
+The W3C Markup Validator, W3C CSS Validator Services, and  were used to validate the project to ensure there were no syntax errors in the project.
