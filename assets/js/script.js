@@ -103,7 +103,9 @@ const renderOutput = () => {
         } = result; /* Destructure the results variable */
 
         /* Render out all the calculated values to the page. The main message is dependent on the amount of years it takes to retire and on the user's age */
-        if (yearCounter === 1) {
+        if (yearCounter === 0) {
+            retirementAgeEl.textContent = `What are you even using this calculator for, you can already retire 😊`
+        } else if (yearCounter === 1) {
             retirementAgeEl.textContent = `Incredible, you can already retire next year, when you are ${retirementAge} years old!`
         } else if (yearCounter > 1 && yearCounter < 10) {
             retirementAgeEl.textContent = `Awesome, you can already retire in about ${yearCounter} years, when you are ${retirementAge} years old!`;
@@ -119,7 +121,7 @@ const renderOutput = () => {
         savingsValueEl.textContent = `${savingsValue.toLocaleString()} €`;
         roiValueEl.textContent = `${Math.round(roiValue).toLocaleString()} €`;
         warningEl.textContent = "";
-        outputAreaEl.classList.remove("hidden"); /* Remove the hidden class from the output area as soon as user input valid values */
+        outputAreaEl.classList.remove("hidden"); /* Remove the hidden class from the output area as soon as user input valid values --> thanks for explaining this concept to my mentor Antonio */
     } else {
         /* If there are errors, give the appropriate message to the user and make sure the previous rendered out values disappear */
         retirementAgeEl.textContent = "Make sure you insert valid values";

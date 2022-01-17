@@ -213,6 +213,31 @@ hr {
     -moz-transform:scale(1.03,1.03);
 }
 
+#email-form {
+    margin-top: 30px;
+}
+
+#email-form p {
+    font-size: 1.2rem;
+}
+
+#email-form input {
+    margin-left: 20px;
+    background: #F5F5F5;
+    border: 1px solid #7D7B7D;
+    padding: 5px 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: 1px 1px 5px 1px #7D7B7D; /* With the help of - https://html-css-js.com/css/generator/box-shadow/ */
+    box-shadow: 1px 1px 5px 1px #7D7B7D;
+}
+
+#email-form input:focus {
+    outline: none;
+    border: 1px solid #30475E;
+    box-shadow: 0 0 5px #30475E;
+    background: white;
+}
+
 /* FAQ area */
 
 #faq-heading {
