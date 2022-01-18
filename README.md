@@ -53,7 +53,7 @@ In the following section, I will give a brief overview of all the features of th
     ![This screenshot shows the footer section on a desktop screen](documentation/feature-screenshots/footer.png)
 
 ### Features left to implement
-    - In the future I would like to implement a graph/diagram that shows how the portfolio is growing over time until financial independence is reached.
+- In the future I would like to implement a graph/diagram that shows how the portfolio is growing over time until financial independence is reached.
 
 
 ## ## Technologies Used

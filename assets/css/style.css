@@ -151,7 +151,7 @@ button:hover {
     -moz-transform:scale(1.03,1.03);
 }
 
-#explanation {
+.explanation {
     width: 65%;
     margin: 0 auto 30px;
 }
