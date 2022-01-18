@@ -1,4 +1,4 @@
-# F.I.R.E. Calculator
+# F.I.R.E. Calculator - [Live link](https://timschulz1991.github.io/js-essentials-portfolio-project-fire-calculator/)
 
 This fully-responsive calculation tool helps people, who are interested in FIRE (Financial Independence, Retire Early) to determine how much longer they still have to work and save money until they can live financially independent. This means that they can live off the returns of their investments for the rest of their lives. This page not only helps people with their FIRE-related calculations, but also gives them an introduction to the FIRE movement overall. 
 
@@ -27,6 +27,7 @@ The tool is easy to use, so that anyone can calculate their potential future ret
 - ### Wireframes
     - The following wireframe shows the general outline of the page as it was intended. The only real difference in the final page is that I made the FAQ more prominent than I had originally thought. 
     ![This wireframe shows the whole page outline](documentation/wireframes/wireframe.png)
+    ![This wireframe shows the mobile page outline](documentation/wireframes/wireframe-mobile.png)
 
 ## Features
 In the following section, I will give a brief overview of all the features of the page. All of them are responsive on all device sizes.
@@ -77,11 +78,11 @@ In the following section, I will give a brief overview of all the features of th
 6. [tinypng.com](https://tinypng.com/)
     - This website was used to decrease the file size of images.
 7. [reliablepsd.com/](https://reliablepsd.com/ultimate-google-font-pairings/)
-    - This website was used to find a nice font pair.
+    - This website was used to find a suitable font pair.
 8. [html-css-js.com](https://html-css-js.com/css/generator/box-shadow/)
     - This website was used to generate CSS code for shadows throughout the page.
 9. [grid.malven.co/](https://grid.malven.co/)
-    - This website was used to get help with different CSS grid properties for my inout section.
+    - This website was used to get help with different CSS grid properties for my input section.
 10. [mycolor.space/](https://mycolor.space/)
     - This website was used to find complimentary colors.
 11. [unsplash.com/](https://unsplash.com/)
@@ -111,9 +112,97 @@ The W3C Markup Validator, W3C CSS Validator Services, and  were used to validate
         - The most complex function has a cyclomatic complexity value of 12 while the median is 2.
 
 ### Feature Testing
-- The input area has been tested extensively with all kinds of (allowed) input values
-- A JS validation process incl. error output to the user makes sure that only valid values can be entered; further information is provided to the user about what values they can use (below the calculation button)
-- The output section below the calculation button is hidden at first, and will always be hidden (again) when the user has entered invalid values
-- The email is sent, when a valid email address was provided and the button is clicked; the email content is working as intended
-- The FAQ cards are having a rotation effect only on large screens and laptops
-- The Footer links lead to the correct place and open in a new tab
+- The input area has been tested extensively with all kinds of (allowed) input values.
+- A JS validation process incl. error output to the user makes sure that only valid values can be entered; further information is provided to the user about what values they can use (below the calculation button).
+- The output section below the calculation button is hidden at first, and will always be hidden (again) when the user has entered invalid values.
+- The email is sent, when a valid email address was provided and the button is clicked; the email content is working as intended.
+- The FAQ cards are having a rotation effect only on large screens and laptops.
+- The Footer links lead to the correct place and open in a new tab.
+
+### Further Testing
+- The website was tested on Google Chrome, Opera, Firefox and Safari browsers.
+- The website was viewed on a variety of devices such as Desktop, MacBook Pro, iPhone 8, iPhone 12 and iPad Air 2020.
+- The responsiveness of all screen sizes was tested thoroughly on the actual devices (not only in the Chrome Development Tools).
+- A large amount of testing was done to ensure that all the links, buttons, input fields and rotation effects work correctly.
+- Friends and family members (with design and programming backgrounds) were asked to review the site and documentation to point out any bugs and/or user experience issues. A couple of changes were implemented after that feedback (e.g. the input fields and the calculation process was described more thoroughly for the user). 
+
+### Accessibility 
+![This image shows the website's results from the Lighthouse tool in the Chrome Developer section](/documentation/testing/Lighthouse.png)
+- The accessibility score which was calculated with the Lighthouse tool within the Chrome Developer tools shows that the website is highly accessible for screen readers.
+- The performance score can vary heavily, depending on which computer was used for testing (I tested on several devices and this was the best score I got).
+
+
+## Deployment
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps:
+
+1. Log in to GitHub and locate the correct [GitHub Repository](https://github.com/TimSchulz1991/js-essentials-portfolio-project-fire-calculator)
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+3. Click on the Pages tab in the bottom of the navigation bar on the left.
+4. Under "Source", click the dropdown called "None" and select "main".
+5. Click on save and a link for the website will be created (with a blue background).
+6. After a few minutes the background will turn green and the project [link](https://timschulz1991.github.io/js-essentials-portfolio-project-fire-calculator/) is now published and ready to view on any browser/device.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+
+## Credits
+### Code
+- [This](https://www.youtube.com/watch?v=x7Ewtay0Q78&ab_channel=CodewithVoran) Youtube video taught me how to implement EmailJS in order to send emails to my website visors.
+- [This](https://www.w3schools.com/howto/howto_css_flip_card.asp) W3Schools article taught me how to create flip cards (cards with a rotation effect) in CSS.
+- My mentor Antonio helped me a lot with the implmentation of a "hidden" class, which hides sections of the page at first. He also motivated me to include the EmailJS feature.
+- My startup colleague Daniel helped me with advice on how to refactor my code for less "DRY" and a better readability and structure overall. Thank you for listening to all my questions!
+- If any coding help/inspiration that I used in the project is not mentioned here, it was referenced as a comment in the code. 
+
+### Content
+
+- External content about the general stock market, about the FIRE movement and about the 4% rule was linked to within the website, so visitors can read more. The rest of the content and the logic behind the calculations was written by the developer, based on generally available investment formulas regarding the Future Value of an investment.
+- Those external websites are: 
+    - [Average Stock Market Returns](https://www.sofi.com/learn/content/average-stock-market-return/)
+    - [The FIRE Movement](https://www.investopedia.com/terms/f/financial-independence-retire-early-fire.asp)
+    - [The 4% Rule](https://www.investopedia.com/terms/f/four-percent-rule.asp)
+
+### Media
+
+- The hero image was downloaded from [unsplash.com](http://unsplash.com).
+
+### Acknowledgements
+
+- As described above, big acknowledgements to my mentor Antonio and my colleague Daniel for all the help and feedback.
+
+
+Thank you for reading my README!
+
