@@ -33,7 +33,7 @@ h1 {
     font-size: 3rem;
 }
 
-h3 span {
+.large {
     font-size: 1.5rem;
 }
 
@@ -46,7 +46,7 @@ h3 span {
         font-size: 0.9rem;
     }
 
-    h3 span {
+    .large {
         font-size: 1.2rem;
     }
 }
@@ -85,7 +85,7 @@ h3 span {
 /* --> Input area */
 
 .input-container {
-    display:grid;
+    display: grid;
     grid-template-columns: 7fr 3fr;
     grid-column-gap: 30px;
     grid-row-gap: 15px;

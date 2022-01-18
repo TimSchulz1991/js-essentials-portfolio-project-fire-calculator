@@ -10,7 +10,6 @@ const interestEl = document.getElementById("interest-el");
 const ageEl = document.getElementById("age-el");
 const warningEl = document.getElementById("warning");
 const buttonEl = document.getElementById("calculate");
-
 const portfolioValueEl = document.getElementById("portfolio-val");
 const savingsValueEl = document.getElementById("savings-val");
 const roiValueEl = document.getElementById("roi-val");
