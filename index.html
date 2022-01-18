@@ -31,16 +31,16 @@
                     you enter below</h4>
                 <form>
                     <div class="input-container">
-                        <label for="income-el">My annual income (in €): </label>
+                        <label for="income-el">My annual income (in €)*: </label>
                         <input type="number" id="income-el" name="income">
 
-                        <label for="cost-el">My annual costs (in €): </label>
+                        <label for="cost-el">My annual costs (in €)*: </label>
                         <input type="number" id="cost-el" name="cost">
 
                         <label for="net-worth-el">My current net worth (in €): </label>
                         <input type="number" id="net-worth-el" name="net-worth">
 
-                        <label for="interest-el">Annual anticipated return (in %): </label>
+                        <label for="interest-el">Annual anticipated return (in %)**: </label>
                         <input type="number" id="interest-el" name="interest">
 
                         <label for="age-el">My current age: </label>
@@ -49,12 +49,19 @@
                 </form>
                 <p id="warning"></p>
                 <button id="calculate">Calculate time until retirement</button>
+                <p id="explanation">* The positive difference between your annual income and costs is invested at the
+                    end of the year - so make sure your income is larger than your costs </p>
+                <p id="explanation">** Looking at the S&P 500 for the years 1991 to 2020, the average stock market
+                    return for the last 30 years is 10.72% (8.29% when adjusted for inflation) - <a
+                        href="https://www.sofi.com/learn/content/average-stock-market-return/" target="_blank"
+                        aria-label="Read more about the average stock market returns" rel="noopener">Read more</a></p>
             </div>
 
             <!-- Show output of calculation to the user -->
             <div id="output-area" class="hidden">
                 <hr>
-                <p class="large-p margin-top">Your future retirement age: <br><br><span id="retirement-age-2"></span></p>
+                <p class="large-p margin-top">Your future retirement age: <br><br><span id="retirement-age-2"></span>
+                </p>
                 <p class="large-p">Total Net Worth: <br><br><span id="portfolio-val"></span></p>
                 <p>of which is savings: <br><br><span id="savings-val"></span></p>
                 <p>of which is return on investment: <br><br><span id="roi-val"></span></p>

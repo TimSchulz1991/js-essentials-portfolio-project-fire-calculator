@@ -143,6 +143,9 @@ const renderOutput = () => {
 const validateInput = (income, cost, netWorth, interest, age) => {
     const errors = [];
     /* Keep pushing errors to the errors array (if there are any)*/
+    if (income <= cost) {
+        errors.push("Your income must be larger than your costs!<br>");
+    }
     if (income <= 0 || isNaN(income)) {
         errors.push("Your income must be a number larger than 0!<br>");
     }
@@ -201,7 +204,7 @@ const sendMail = () => {
         savingsValue,
         roiValue
     };
-    // If this was a real project, I should figure out a way to my EmailJS IDs below
+    // If this was a real project, I should figure out a way to anonymize my EmailJS IDs below
     emailjs.send("service_isgt4xx", "template_hsr3px7", tempParams).then((res) => {
         console.log("success", res.status);
     }).catch((error) => {

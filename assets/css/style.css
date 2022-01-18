@@ -151,6 +151,11 @@ button:hover {
     -moz-transform:scale(1.03,1.03);
 }
 
+#explanation {
+    width: 65%;
+    margin: 0 auto 30px;
+}
+
 hr {
     border-top: 3px solid #30475E;
     width: 400px;
