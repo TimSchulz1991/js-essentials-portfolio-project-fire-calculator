@@ -97,3 +97,23 @@ In the following section, I will give a brief overview of all the features of th
 ### Validator Testing
 
 The W3C Markup Validator, W3C CSS Validator Services, and  were used to validate the project to ensure there were no syntax errors in the project.
+
+- HTML
+    - No errors were found when passing through the official [W3C Markup Validator](https://validator.w3.org/) - [Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftimschulz1991.github.io%2Fjs-essentials-portfolio-project-fire-calculator%2F)
+- CSS
+    - No errors were found when passing through the official [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ftimschulz1991.github.io%2Fjs-essentials-portfolio-project-fire-calculator%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=de)
+- JavaScript
+    - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+    - The following metrics were returned: 
+        - There are 9 functions in this file.
+        - Function with the largest signature take 5 arguments, while the median is 1.
+        - Largest function has 27 statements in it, while the median is 3.
+        - The most complex function has a cyclomatic complexity value of 12 while the median is 2.
+
+### Feature Testing
+- The input area has been tested extensively with all kinds of (allowed) input values
+- A JS validation process incl. error output to the user makes sure that only valid values can be entered; further information is provided to the user about what values they can use (below the calculation button)
+- The output section below the calculation button is hidden at first, and will always be hidden (again) when the user has entered invalid values
+- The email is sent, when a valid email address was provided and the button is clicked; the email content is working as intended
+- The FAQ cards are having a rotation effect only on large screens and laptops
+- The Footer links lead to the correct place and open in a new tab

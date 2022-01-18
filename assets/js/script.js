@@ -179,8 +179,6 @@ const renderWarnings = (errors) => {
  * EmailJS setup with the help of https://www.youtube.com/watch?v=x7Ewtay0Q78&ab_channel=CodewithVoran and the EmailJS instructions
  */
 
-document.getElementById("send-email").addEventListener('click', sendMail);
-
 const sendMail = () => {
     let {
         retirementAge,
@@ -212,3 +210,5 @@ const sendMail = () => {
     emailParagraphEl.textContent = "An email with your results has been sent to you!";
     toEmailEl.value = "";
 };
+
+document.getElementById("send-email").addEventListener('click', sendMail);
